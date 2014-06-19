@@ -7,24 +7,55 @@ call which will return the remote config.
 */
 
 $fh.ready(function() {
-  document.getElementById('run_button').onclick = function() {
-
-  console.log(document.getElementById("sqlquery").value);
+  document.getElementById('list_button').onclick = function() {
 
   $fh.act(
     {
-      act:'mysql',
-      req: {
-                'query': document.getElementById("sqlquery").value
-           }
+      act:'list'
     },
     function(res) {
-      document.getElementById('sqlResults').innerHTML = JSON.stringify(res.rows);
+      document.getElementById('Results').innerHTML = JSON.stringify(res);
     },
     function(code,errorprops,params) {
       console.log('An error occured: ' + code + ' : ' + errorprops.error);
-      document.getElementById('sqlResults').innerHTML = 'An error occured: ' + code + ' : ' + errorprops.error;
+      document.getElementById('Results').innerHTML = 'An error occured: ' + code + ' : ' + errorprops.error;
     }
   );
 };
+
+  document.getElementById('deleteall_button').onclick = function() {
+
+  $fh.act(
+    {
+      act:'deleteall'
+    },
+    function(res) {
+      document.getElementById('Results').innerHTML = JSON.stringify(res);
+    },
+    function(code,errorprops,params) {
+      console.log('An error occured: ' + code + ' : ' + errorprops.error);
+      document.getElementById('Results').innerHTML = 'An error occured: ' + code + ' : ' + errorprops.error;
+    }
+  );
+};
+
+  document.getElementById('add_button').onclick = function() {
+
+  $fh.act(
+    {
+      act:'add'
+    },
+    function(res) {
+      document.getElementById('Results').innerHTML = JSON.stringify(res);
+    },
+    function(code,errorprops,params) {
+      console.log('An error occured: ' + code + ' : ' + errorprops.error);
+      document.getElementById('Results').innerHTML = 'An error occured: ' + code + ' : ' + errorprops.error;
+    }
+  );
+};
+
+
+
+
 });

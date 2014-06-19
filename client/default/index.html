@@ -19,22 +19,19 @@
 		<p></p>
 		<img src="resources/fh_logo.png" align="middle">
 		<p></p>
-		<h1>MySql Test</h1>
+		<h1>$fh.db Demo</h1>
 		<p></p>
-
-		<form>
-			<textarea rows="2" cols="45" autofocus maxlength="200" required wrap="soft" id="sqlquery"></textarea>
-		</form>
-
+This app can perform various actions against a mongo database in a seperate app.
 		<p></p>
-		<button type="button" id="run_button" class="btn btn-lg btn-danger"> Submit </button>
-
+		<button type="button" id="list_button" class="btn btn-lg btn-danger"> List contents of MongoDb </button>
+		<button type="button" id="deleteall_button" class="btn btn-lg btn-primary"> Delete all from MongoDb </button>
 		<p></p>
+		<button type="button" id="add_button" class="btn btn-lg btn-info"> Add 'Jim Jones' entry to Mongodb </button>
 		<p></p>
 		<p></p>
 
 		<!--div id="sqlResults" style="background-color:#BDF7A3; border:2px solid border-color:#BDF7A3; width:290px";> -->
-		<textarea rows="5" cols="45" readonly required wrap="hard" id="sqlResults" style="background-color:#BDF7A3;"></textarea>
+		<textarea rows="20" cols="65" readonly required wrap="hard" id="Results" style="background-color:#BDF7A3;"></textarea>
 	</center>
 
 </bg>
