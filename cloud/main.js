@@ -3,6 +3,7 @@
  * - the return 'callback' method signature is 'callback (error, data)', where 'data' is a JSON object.
 */
 
+// You can find this url in the studio dashboard, just add '/cloud/' to it.
 var appurl = 'https://support-tbd8odimttbsvkhssiqdij3l-dev.df.dev.e111.feedhenry.net/cloud/'
 // Detail of this request module can be found at https://github.com/mikeal/request
 var request = require('request');
