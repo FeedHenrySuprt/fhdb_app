@@ -2,6 +2,7 @@
  * All calls here are publicly exposed as REST API endpoints.
  * - the return 'callback' method signature is 'callback (error, data)', where 'data' is a JSON object.
 */
+
 var appurl = 'https://support-tbd8odimttbsvkhssiqdij3l-dev.df.dev.e111.feedhenry.net/cloud/'
 // Detail of this request module can be found at https://github.com/mikeal/request
 var request = require('request');
@@ -35,8 +36,9 @@ request(url, function (error, response, body) {
 };
 
 exports.add = function(params, callback) {
-url = appurl + 'fhdbAdd?firstname=jim&lastname=jones&country=Ireland&phone=123456';
-request(url, function (error, response, body) {
+url = appurl + 'fhdbAdd';
+request.post(url, { form: { firstname : 'jim', lastname : 'jones', country : 'Ireland', phone : '123456' } }, 
+  function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log("Response is " + body);
     return callback(undefined, body);
