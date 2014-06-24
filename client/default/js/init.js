@@ -39,11 +39,11 @@ $fh.ready(function() {
   );
 };
 
-  document.getElementById('add_button').onclick = function() {
+  document.getElementById('list_lastname_button').onclick = function() {
 
   $fh.act(
     {
-      act:'add'
+      act:'listLastName'
     },
     function(res) {
       document.getElementById('Results').innerHTML = JSON.stringify(res);
@@ -55,6 +55,38 @@ $fh.ready(function() {
   );
 };
 
+
+  document.getElementById('addjim_button').onclick = function() {
+
+  $fh.act(
+    {
+      act:'addMrJones'
+    },
+    function(res) {
+      document.getElementById('Results').innerHTML = JSON.stringify(res);
+    },
+    function(code,errorprops,params) {
+      console.log('An error occured: ' + code + ' : ' + errorprops.error);
+      document.getElementById('Results').innerHTML = 'An error occured: ' + code + ' : ' + errorprops.error;
+    }
+  );
+};
+
+  document.getElementById('addjack_button').onclick = function() {
+
+  $fh.act(
+    {
+      act:'addMrSmith'
+    },
+    function(res) {
+      document.getElementById('Results').innerHTML = JSON.stringify(res);
+    },
+    function(code,errorprops,params) {
+      console.log('An error occured: ' + code + ' : ' + errorprops.error);
+      document.getElementById('Results').innerHTML = 'An error occured: ' + code + ' : ' + errorprops.error;
+    }
+  );
+};
 
 
 
